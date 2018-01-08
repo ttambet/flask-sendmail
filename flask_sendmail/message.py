@@ -132,7 +132,7 @@ class Message(object):
         else:
             msg = MIMEMultipart()
             alt = MIMEMultipart('alternative')
-            alt.attach(self.html, 'html', self.charset)
+            alt.attach(MIMEText(self.html, 'html', self.charset))
             msg.attach(alt)
 
         if isinstance(self.sender, tuple):

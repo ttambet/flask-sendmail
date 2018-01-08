@@ -132,6 +132,7 @@ class Message(object):
         else:
             msg = MIMEMultipart()
             alt = MIMEMultipart('alternative')
+            # TODO: handle case when the MIME types of both parts - text/plain and text/html
             alt.attach(MIMEText(self.html, 'html', self.charset))
             msg.attach(alt)
 
